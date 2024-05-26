@@ -1,0 +1,23 @@
+[package]
+name = "rsPyo3Api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The name of the native library. This is the name which will be used in Python to import the
+# library (i.e. `import string_sum`). If you change this, you must also change the name of the
+# `#[pymodule]` in `src/lib.rs`.
+name = "rsPyo3Api"
+crate-type = ["cdylib"]
+
+[dependencies]
+reqwest = { version = "0.12.4", features = ["blocking","json"] }
+pyo3 = { version = "0.21.2", features = ["extension-module"] }
+csv = "1.1"
+serde = { version = "1.0.201", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.22.1"
+bytes = "1.6.0"
+tokio = { version = "1", features = ["full"] }
