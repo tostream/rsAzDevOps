@@ -12,9 +12,9 @@ fn main() {
         filter_query :option string
      */
     let login_res = salesforce_api::request_access_token(
-        "https://cauk--partial.sandbox.my.salesforce.com/services/",
-        "3MVG9KlmwBKoC7U0zHoRlB.PaghDA6XvVybCeWOYP16aPXYtAon1tAHUvcWlgnMZ2b5aYfZc5x8.jiN4SVypV".to_string(), 
-        "7CE9FEBBF3D50FA57296BC126930F0B717CC93E38281902C7BB00305EEA58DF3".to_string());
+        "",
+        ", 
+        ";
 
 
     if login_res.is_ok(){
@@ -22,7 +22,7 @@ fn main() {
         // let result_obj = salesforce_api::get_query_id(res.ok().unwrap());
         println!("{:#?}", &access_token);
         let _state_url = salesforce_api::BearerApi{
-            url :"https://cauk--partial.sandbox.my.salesforce.com/services/".to_string(),
+            url :"".to_string(),
             token : access_token.clone()
         };
         let result = salesforce_api::get_sf_table_content(_state_url,"Account_Profile__c","".to_string());
@@ -32,7 +32,7 @@ fn main() {
 
 // fn get_sf_table_content(access_token:String,table_name: &str, filter_query:String ){
 //     let state_url = salesforce_api::BearerApi{
-//         url :"https://cauk--partial.sandbox.my.salesforce.com/services/data/v55.0/jobs/query/".to_string(),
+//         url :"".to_string(),
 //         token : access_token
 //     };
 //     let query_res: Result<reqwest::blocking::Response, reqwest::Error>  = salesforce_api::request_query_start(
