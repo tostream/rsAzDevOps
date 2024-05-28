@@ -38,7 +38,7 @@ fn get_sf_table(base_url: &str,username: &str,password: &str,table_name: &str,fi
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn CoxRsPyo3Api(_py: Python, m: &PyModule) -> PyResult<()> {
+fn RsPyo3Api(_py: Python, m: &PyModule) -> PyResult<()> {
     // m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(get_request, m)?)?;
     m.add_function(wrap_pyfunction!(get_sf_table, m)?)?;
